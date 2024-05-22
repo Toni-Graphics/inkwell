@@ -40,6 +40,7 @@ pub mod passes;
 pub mod targets;
 pub mod types;
 pub mod values;
+pub mod easy_api;
 
 // Boilerplate to select a desired llvm_sys version at compile & link time.
 #[cfg(feature = "llvm10-0")]
@@ -488,4 +489,13 @@ pub enum InlineAsmDialect {
     ATT,
     #[llvm_variant(LLVMInlineAsmDialectIntel)]
     Intel,
+}
+
+pub mod prelude {
+    pub use crate::context::Context;
+    pub use crate::module::Module;
+    pub use crate::builder::Builder;
+    pub use crate::basic_block::BasicBlock;
+    pub use crate::targets::{TargetData, Target, TargetTriple, TargetMachine};
+    pub use crate::types::{IntType, FloatType};
 }
