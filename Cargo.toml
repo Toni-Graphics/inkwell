@@ -12,7 +12,7 @@ categories = ["development-tools::ffi"]
 edition = "2021"
 
 [features]
-default = ["target-all"]
+default = ["target-all", "llvm17-0"]
 
 # Please update internal_macros::FEATURE_VERSIONS when adding a new LLVM version
 llvm4-0 = ["llvm-sys-40"]
